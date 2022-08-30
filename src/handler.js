@@ -55,7 +55,7 @@ const { nanoid } = require('nanoid');
 const books = require('./books');
 
 const addBookHandler = (request, h) => {
-
+  
   const {
 
     name, year, author, summary, publisher, pageCount, readPage, reading,
@@ -125,6 +125,8 @@ const addBookHandler = (request, h) => {
       },
 
     });
+
+    response.setHeader('Content-Type', 'application/json; charset=utf-8');
 
     response.code(201);
 
